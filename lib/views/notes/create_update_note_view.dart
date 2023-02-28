@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/extensions/buildcontext/loc.dart';
 import 'package:flutter_application_1/services/auth/auth_service.dart';
 import 'package:flutter_application_1/untilies/dialogs/cannot_share_empty_note_dialog.dart';
 import 'package:flutter_application_1/untilies/generics/get_arguments.dart';
 import 'package:flutter_application_1/services/cloud/cloud_note.dart';
-import 'package:flutter_application_1/services/cloud/cloud_storage_exceptions.dart';
 import 'package:flutter_application_1/services/cloud/firebase_cloud_storage.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -93,7 +93,9 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('New Note'),
+          title: Text(
+            context.loc.note,
+          ),
           actions: [
             IconButton(
               onPressed: () async {
@@ -119,7 +121,7 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
                   keyboardType: TextInputType.multiline,
                   maxLines: null,
                   decoration: InputDecoration(
-                    hintText: 'Start typing your note...',
+                    hintText: context.loc.start_typing_your_note,
                   ),
                 );
               default:

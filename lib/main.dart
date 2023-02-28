@@ -12,12 +12,16 @@ import 'package:flutter_application_1/views/register_view.dart';
 import 'package:flutter_application_1/views/verify_email_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'views/notes/notes_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(MaterialApp(
+    supportedLocales: AppLocalizations.supportedLocales,
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
     title: 'Flutter Demo',
+    debugShowCheckedModeBanner: false,
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
